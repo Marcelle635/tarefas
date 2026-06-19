@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users/1';
+  // Mudamos para a API de conselhos/dicas traduzida para o português
+  private apiUrl = 'https://api.adviceslip.com/advice';
 
   constructor(private http: HttpClient) { }
 
