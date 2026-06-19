@@ -1,0 +1,27 @@
+<ion-card color="success">
+  <ion-card-header>
+    <div class="card-header-wrapper">
+      <ion-icon [name]="icone" size="large"></ion-icon>
+      <div>
+        <ion-card-title>{{ atividade.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ atividade.data }}</ion-card-subtitle>
+      </div>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ atividade.descricao }}</p>
+    <p><strong>Pontos:</strong> {{ atividade.pontos }} XP</p>
+    
+    <div class="card-actions">
+      <!-- Botão para Editar (Update) -->
+      <ion-button fill="clear" color="light" (click)="onEditar.emit(atividade)">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button>
+      <!-- Botão para Excluir (Delete) -->
+      <ion-button fill="clear" color="danger" (click)="onDeletar.emit(atividade.id)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

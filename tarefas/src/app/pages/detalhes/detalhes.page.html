@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ isEditando ? 'Editar Atividade' : 'Nova Atividade' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <ion-item lines="none">
+      <ion-input 
+        label="Título da Atividade" 
+        labelPlacement="floating" 
+        [(ngModel)]="tarefa.titulo" 
+        type="text" 
+        placeholder="Ex: Plantio de árvores">
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-textarea 
+        label="Descrição das Ações" 
+        labelPlacement="floating" 
+        [(ngModel)]="tarefa.descricao" 
+        placeholder="Descreva o impacto ecológico dessa ação...">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input 
+        label="Data Limite" 
+        labelPlacement="floating" 
+        [(ngModel)]="tarefa.data" 
+        type="date">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="salvar()">
+      {{ isEditando ? 'Atualizar Atividade' : 'Salvar Atividade' }}
+    </ion-button>
+  </div>
+</ion-content>

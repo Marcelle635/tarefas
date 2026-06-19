@@ -1,27 +1,52 @@
-#container {
-  text-align: center;
+.api-banner {
+  background-color: #e8f4fd;
+  border-left: 5px solid #3880ff;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  h5 {
+    margin: 0 0 6px 0;
+    color: #1a468c;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin: 0;
+    color: #2b569a;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  ion-spinner {
+    --color: #3880ff;
+    margin-top: 4px;
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.section-title {
+  margin: 24px 16px 8px 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1c1c1e;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-list {
+  background: transparent; // Garante que a lista não quebre o fundo do app
+  padding-bottom: 80px; // Espaço para o botão flutuante não tampar o último card
 }
 
-#container a {
-  text-decoration: none;
+ion-fab-button {
+  --background: #2dd36f;
+  --background-activated: #24b05b;
+  box-shadow: 0 4px 12px rgba(45, 211, 111, 0.4);
+}
+ion-fab {
+  bottom: 24px; // Sobe o botão da extremidade inferior
+  right: 24px;  // Afasta um pouquinho da lateral direita
 }
