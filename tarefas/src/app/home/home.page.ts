@@ -5,10 +5,8 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonFab, IonFabBut
 import { ItemCardComponent } from '../components/item-card/item-card.component';
 import { ApiService } from '../services/api';
 import { DatabaseService } from '../services/database';
-
-// 1. IMPORTANTE: Importar o addIcons e os ícones do Ionicons
 import { addIcons } from 'ionicons';
-import { add, leafOutline, createOutline, trashOutline } from 'ionicons/icons';
+import { add, leafOutline, pencilOutline, trashOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
@@ -26,8 +24,8 @@ export class HomePage implements OnInit {
     private apiService: ApiService,
     private dbService: DatabaseService
   ) {
-    // 2. IMPORTANTE: Registrar os ícones aqui no construtor da Home
-    addIcons({ add, leafOutline, createOutline, trashOutline });
+    // Registra os ícones usados nesta página
+    addIcons({ add, leafOutline, pencilOutline, trashOutline });
   }
 
   ngOnInit() {
@@ -36,15 +34,12 @@ export class HomePage implements OnInit {
   }
 
   carregarDicaApi() {
-    // Chamada simulada do seu serviço de API RESTful
     this.apiService.getDadosPerfil().subscribe((resposta: any) => {
-      // Exemplo pegando o nome da empresa/frase do JSONPlaceholder
       this.dicaDoDia = resposta?.company?.catchPhrase || 'Economize água hoje!';
     });
   }
 
   carregarAtividadesFirebase() {
-    // Chamada para ler os dados do banco Firebase
     this.dbService.getAtividades().subscribe(dados => {
       this.listaAtividades = dados;
     });
@@ -55,7 +50,6 @@ export class HomePage implements OnInit {
   }
 
   irParaEditar(atividade: any) {
-    // Passa o objeto a ser editado através do estado da rota
     this.router.navigate(['/detalhes'], { state: { data: atividade } });
   }
 

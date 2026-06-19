@@ -1,8 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonIcon, IonButton } from '@ionic/angular/standalone';
-// 1. IMPORTANTE: Importe o addIcons e os ícones que vamos usar
 import { addIcons } from 'ionicons';
-import { leafOutline, createOutline, trashOutline, add } from 'ionicons/icons';
+import { leafOutline, pencilOutline, trashOutline, add } from 'ionicons/icons';
 
 @Component({
   selector: 'app-item-card',
@@ -18,8 +17,8 @@ export class ItemCardComponent {
   @Output() onEditar = new EventEmitter<any>();
   @Output() onDeletar = new EventEmitter<string>();
 
-  // 2. IMPORTANTE: Registre os ícones no construtor do componente
   constructor() {
-    addIcons({ leafOutline, createOutline, trashOutline, add });
+    // Registra os ícones para que fiquem disponíveis no HTML do componente
+    addIcons({ leafOutline, pencilOutline, trashOutline, add });
   }
 }
